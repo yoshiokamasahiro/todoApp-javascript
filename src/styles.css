@@ -1,3 +1,63 @@
 body {
   font-family: sans-serif;
 }
+p {
+  margin: 0;
+}
+input {
+  border-radius: 16px;
+  border: none;
+  padding: 6px 16px;
+  outline: none;
+}
+button {
+  border-radius: 16px;
+  border: none;
+  padding: 4px 16px;
+  transition: all 0.3s;
+}
+button:hover {
+  background: #ff7fff;
+  color: #fff;
+  cursor: pointer;
+}
+.input-area {
+  background: #c1ffff;
+  width: 400px;
+  height: 30px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.incomplate-area {
+  background: #c6ffe2;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.complate-area {
+  background: #ffffe0;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.title {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 600;
+  color: #666666;
+}
+.list-row {
+  display: flex;
+  align-items: center;
+}
+.list-row + .list-row {
+  padding-top: 4px;
+}
+.list-row > div {
+  margin-left: 10px;
+}
