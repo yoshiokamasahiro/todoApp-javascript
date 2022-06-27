@@ -9,7 +9,7 @@ const onClickAdd = () => {
   const liList = document.createElement("li");
   liList.className = "list-row";
 
-  //li作成
+  //pタグ作成(テキスト取得)
   const pText = document.createElement("p");
   pText.innerText = inputText;
 
