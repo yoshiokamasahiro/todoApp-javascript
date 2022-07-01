@@ -20,15 +20,15 @@ const onClickAdd = () => {
   //完了ボタン挿入
   const btnComplate = document.createElement("button");
   btnComplate.innerText = "完了";
-  btnComplate.addEventListener("click", () => {
-    alert("完了ボタン");
-  });
+  btnComplate.addEventListener("click", () => {});
 
   //削除ボタン挿入
   const btnRemove = document.createElement("button");
   btnRemove.innerText = "削除";
   btnRemove.addEventListener("click", () => {
-    alert("削除ボタン");
+    // const removeTarget = btnRemove.parentNode.parentNode ←愚行;
+    const removeTarget = btnRemove.closest(".list-row");
+    document.getElementById("incomplateList").removeChild(removeTarget);
   });
 
   //ulタグの子要素に各要素を設定
