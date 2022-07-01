@@ -9,12 +9,33 @@ const onClickAdd = () => {
   const liList = document.createElement("li");
   liList.className = "list-row";
 
+  //ボタンエリア生成
+  const btnArea = document.createElement("div");
+  btnArea.classList = "btnArea";
+
   //pタグ作成(テキスト取得)
   const pText = document.createElement("p");
   pText.innerText = inputText;
 
+  //完了ボタン挿入
+  const btnComplate = document.createElement("button");
+  btnComplate.innerText = "完了";
+  btnComplate.addEventListener("click", () => {
+    alert("完了ボタン");
+  });
+
+  //削除ボタン挿入
+  const btnRemove = document.createElement("button");
+  btnRemove.innerText = "削除";
+  btnRemove.addEventListener("click", () => {
+    alert("削除ボタン");
+  });
+
   //ulタグの子要素に各要素を設定
   liList.appendChild(pText);
+  liList.appendChild(btnArea);
+  btnArea.appendChild(btnComplate);
+  btnArea.appendChild(btnRemove);
 
   //未完了のリストに追加
   document.getElementById("incomplateList").appendChild(liList);

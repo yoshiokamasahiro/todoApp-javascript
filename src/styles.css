@@ -16,6 +16,9 @@ button {
   padding: 4px 16px;
   transition: all 0.3s;
 }
+button + button {
+  margin-left: 5px;
+}
 button:hover {
   background: #ff7fff;
   color: #fff;
