@@ -20,7 +20,10 @@ const onClickAdd = () => {
   //完了ボタン挿入
   const btnComplate = document.createElement("button");
   btnComplate.innerText = "完了";
-  btnComplate.addEventListener("click", () => {});
+  btnComplate.addEventListener("click", () => {
+    const complateTarget = btnComplate.closest(".list-row");
+    document.getElementById("incomplateList").removeChild(complateTarget);
+  });
 
   //削除ボタン挿入
   const btnRemove = document.createElement("button");
