@@ -21,8 +21,30 @@ const onClickAdd = () => {
   const btnComplate = document.createElement("button");
   btnComplate.innerText = "完了";
   btnComplate.addEventListener("click", () => {
-    const complateTarget = btnComplate.closest(".list-row");
-    document.getElementById("incomplateList").removeChild(complateTarget);
+    //押された完了ボタンの親タグ(.list-low)を削除
+    delateFromIncomplateList(btnRemove.closest(".list-row"));
+    //完了リストに追加する要素
+    const addTarget = btnComplate.closest(".list-row");
+
+    //TODO内容テキストを取得
+    const text = addTarget.firstElementChild.innerText;
+
+    //li以下を初期化
+    addTarget.textContent = null;
+    //li以下に代入
+    const psec = document.createElement("p");
+    psec.innerText = text;
+    //ボタンが入る要素を作成
+    const divWrap = document.createElement("div");
+
+    const backBtn = document.createElement("button");
+    backBtn.innerText = "戻す";
+
+    addTarget.appendChild(psec);
+    addTarget.appendChild(divWrap);
+    divWrap.appendChild(backBtn);
+
+    document.getElementById("complateList").appendChild(addTarget);
   });
 
   //削除ボタン挿入
@@ -30,8 +52,9 @@ const onClickAdd = () => {
   btnRemove.innerText = "削除";
   btnRemove.addEventListener("click", () => {
     // const removeTarget = btnRemove.parentNode.parentNode ←愚行;
-    const removeTarget = btnRemove.closest(".list-row");
-    document.getElementById("incomplateList").removeChild(removeTarget);
+    // const removeTarget = btnRemove.closest(".list-row");
+    // document.getElementById("incomplateList").removeChild(removeTarget);
+    delateFromIncomplateList(btnRemove.closest(".list-row"));
   });
 
   //ulタグの子要素に各要素を設定
@@ -42,6 +65,11 @@ const onClickAdd = () => {
 
   //未完了のリストに追加
   document.getElementById("incomplateList").appendChild(liList);
+};
+
+//未完了リストから指定の要素を削除
+const delateFromIncomplateList = (target) => {
+  document.getElementById("incomplateList").removeChild(target);
 };
 
 document
